@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Birthday Nishie 🎉</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Flower animation styles */
+    .flower {
+      position: fixed;
+      top: 0;
+      width: 50px;
+      height: 50px;
+      background-image: url('https://img.icons8.com/emoji/48/000000/cherry-blossom.png');
+      background-size: cover;
+      animation: float 10s linear infinite;
+      z-index: 0;
+    }
+
+    .flower:nth-child(even) {
+      animation-duration: 12s;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(-100%) rotate(0deg);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body class="bg-gradient-to-br from-pink-200 via-yellow-100 to-purple-200 min-h-screen flex flex-col items-center justify-center text-center relative overflow-hidden font-sans">
+
+  <!-- Flowers -->
+  <div class="flower" style="left: 5%;"></div>
+  <div class="flower" style="left: 15%;"></div>
+  <div class="flower" style="left: 25%;"></div>
+  <div class="flower" style="right: 5%;"></div>
+  <div class="flower" style="right: 15%;"></div>
+
+  <!-- Autoplay Birthday Song -->
+ <button onclick="document.getElementById('birthdayMusic').play()" class="bg-red-500 text-white px-4 py-2 rounded-full shadow-lg hover:bg-red-600 mt-6">
+  🎵 Tap to Play Song
+</button>
+
+<!-- Audio element -->
+<audio id="birthdayMusic" loop>
+  <source src="Audio 2025-07-04 at 19.30.12_fcc9fa27.mp3" type="audio/mp3">
+  Your browser does not support the audio element.
+</audio>
+
+  <!-- Title -->
+  <h1 class="text-5xl font-extrabold text-pink-700 mb-6 animate-bounce drop-shadow-md">Happy Birthday, Nishie! 🎂💖</h1>
+
+  <!-- Message Area -->
+  <div id="messageBox" class="bg-white/60 p-6 rounded-lg shadow-lg max-w-xl mx-auto text-lg text-purple-800 font-medium min-h-[100px] mb-6 transition-all duration-500"></div>
+
+  <!-- Buttons -->
+  <div class="flex flex-wrap gap-4 justify-center z-10">
+    <button onclick="showMessage(0)" class="bg-pink-400 hover:bg-pink-500 text-white py-2 px-4 rounded-full shadow-lg transition-all duration-300">🌟 Message 1</button>
+    <button onclick="showMessage(1)" class="bg-purple-400 hover:bg-purple-500 text-white py-2 px-4 rounded-full shadow-lg transition-all duration-300">🌈 Message 2</button>
+    <button onclick="showMessage(2)" class="bg-yellow-400 hover:bg-yellow-500 text-white py-2 px-4 rounded-full shadow-lg transition-all duration-300">🌺 Message 3</button>
+    <button onclick="showMessage(3)" class="bg-blue-400 hover:bg-blue-500 text-white py-2 px-4 rounded-full shadow-lg transition-all duration-300">💖 Message 4</button>
+    <button onclick="showMessage(4)" class="bg-green-400 hover:bg-green-500 text-white py-2 px-4 rounded-full shadow-lg transition-all duration-300">🎉 Message 5</button>
+    <button onclick="showMessage(5)" class="bg-green-400 hover:bg-orange-500 text-white py-2 px-4 rounded-full shadow-lg transition-all duration-300">🎉 Message 6</button>
+  </div>
+
+  <!-- JavaScript for messages -->
+  <script>
+    const messages = [
+      "🎉 Happy Birthday, Nishie!You light up the world just by being in it. I hope today brings you all the love, joy, and sweetness you give to everyone else, every day. 💖",
+      "🌼 Wishing you joy and love on your special day! 🌼<br><em>“The Lord bless you and keep you.”</em>",
+      "Wishing you a birthday as beautiful and kind as your heart. You deserve all the happiness in the universe today and always. ✨",
+      "You make life so much brighter just by being yourself. I hope your day is filled with laughter, cake, and all the love your heart can hold. 🎈",
+      "🎁 You are a precious gift! 🎁<br><em>Today is all about you — your smile, your kindness, your beautiful soul. I'm so lucky to know you. Here's to an unforgettable year ahead! 🥂</em>",
+      "Every year you grow more amazing, more inspiring, and even more wonderful. I hope today makes you feel as special as you really are. Happy Birthday! 🎊"
+    ];
+
+    function showMessage(index) {
+      const box = document.getElementById("messageBox");
+      box.innerHTML = messages[index];
+    }
+  </script>
+
+</body>
+</html>
